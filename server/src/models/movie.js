@@ -58,6 +58,17 @@ const update = (id, data) => {
 	})	
 }
 
+// desconfío mucho de que esta solución sea correcta, por favor checkear
+const borrar = (id, data) => {
+	return Movie.findOne({where: {id: id}}).then(movie => {
+		if (movie != null) {
+			movie = Movie.getElementById("id")
+			movie.remove()
+		}
+		return null
+	})	
+}
+
 const MovieModel = {
 	Movie: Movie,
 	getAll: getAll,
